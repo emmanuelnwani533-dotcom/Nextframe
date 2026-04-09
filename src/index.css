@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Nextframe Media Palette (Purple) */
+  --color-next-bg: #10002b;
+  --color-next-dark: #240046;
+  --color-next-deep: #3c096c;
+  --color-next-purple: #5a189a;
+  --color-next-vibrant: #7b2cbf;
+  --color-next-light: #9d4edd;
+  --color-next-accent: #c77dff;
+  --color-next-text: #e0aaff;
+  --color-next-line: rgba(224, 170, 255, 0.1);
+  
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", "Montserrat", sans-serif;
+  
+  --ease-premium: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-scroll: scroll 40s linear infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+/* Global Styles */
+body {
+    background-color: var(--color-next-bg);
+    color: var(--color-next-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    @apply selection:bg-next-accent selection:text-next-bg;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 400;
+}
+
+.ui-dark {
+    background-color: var(--color-next-dark);
+    color: var(--color-next-text);
+}
+
+.ui-light {
+    background-color: var(--color-next-text);
+    color: var(--color-next-bg);
+}
+
+/* Custom Utilities */
+.leading-trim {
+    line-height: 0.9;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.parallax-image-move {
+    will-change: transform;
+}
+
+.flicker-fix {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-next-purple);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-next-bg);
+}
+
+.oval-mask {
+    border-radius: 100% 100% 0 0;
+}
+
+.vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
